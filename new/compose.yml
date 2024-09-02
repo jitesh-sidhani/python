@@ -1,0 +1,21 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: newpostgres
+    privileged: true
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: mysecretpassword
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    restart: always
+   
+  kafka:
+    image: apache/kafka:latest
+    container_name: newkafka
+    ports:
+      - 9092:9092
+
+  
